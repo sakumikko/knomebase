@@ -83,13 +83,7 @@
         "recipe[elasticsearch::plugins]",
         "recipe[elasticsearch::monit]",
         "recipe[elasticsearch::plugins]" ,
-        "recipe[npm_packages]",
-        "recipe[selenium::firefox]",
-        "recipe[selenium::opera]",
-        "recipe[selenium::chrome]",
-        "recipe[selenium::node]",
-        "recipe[selenium::ghostdriver]",
-        "recipe[selenium::hub]"
+        "recipe[npm_packages]"
 
     ]
 }
