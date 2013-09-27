@@ -1,0 +1,95 @@
+{
+
+   "couch_db": {
+        "config" : {
+            "httpd" : {
+                "bind_address" : "0.0.0.0"
+
+            }
+        }
+   },
+  "nodejs" : {
+     "version":"0.10.15",
+     "checksum":"87345ab3b96aa02c5250d7b5ae1d80e620e8ae2a7f509f7fa18c4aaa340953e8"
+  },
+  "package_installer": {
+    "packages" : {
+      "g++": null,
+      "make": null,
+      "curl": null,
+      "firefox" : null,
+      "chromium-browser" : null
+    }
+    
+  },
+    "elasticsearch" : {
+        "cluster_name" : "elasticsearch_test_chef",
+        "version"  : "0.90.5",
+        "bootstrap.mlockall" : false,
+        "plugins" : {
+            "elasticsearch/elasticsearch-river-couchdb/1.2.0" : {},
+            "elasticsearch/elasticsearch-lang-javascript/1.4.0" : {}
+
+        }
+    },
+    "java": {
+        "install_flavor": "openjdk",
+        "jdk_version": "7"
+    },
+    "npm_packages": {
+        "packages" : [
+            "node-gyp",
+            "supervisor",
+            "coffee-script",
+            "coffee",
+            "karma",
+            "mocha",
+            "phantomjs",
+            "protractor"
+        ]
+    },
+    
+      "selenium": {
+        "server": {
+          "version": "2.35.0"
+        },
+        "chromedriver": {
+          "version": "2.0"
+        },
+        "firefox": {
+          "version": "last"
+        },
+        "chrome": {
+          "version": "last"
+        },
+        "opera": {
+          "version": "last"
+        },
+        "hub": {
+          "host": "127.0.0.1"
+        }
+    },
+    "run_list": [
+
+
+        "recipe[apt]",
+        "recipe[package_installer]",
+        "recipe[nodejs]",
+        "recipe[couchdb::source]",
+        "recipe[git]",
+        "recipe[java]",
+        "recipe[monit]",
+        "recipe[elasticsearch]",
+        "recipe[elasticsearch::plugins]",
+        "recipe[elasticsearch::monit]",
+        "recipe[elasticsearch::plugins]" ,
+        "recipe[npm_packages]",
+        "recipe[selenium::firefox]",
+        "recipe[selenium::opera]",
+        "recipe[selenium::chrome]",
+        "recipe[selenium::node]",
+        "recipe[selenium::ghostdriver]",
+        "recipe[selenium::hub]"
+
+    ]
+}

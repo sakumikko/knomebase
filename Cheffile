@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+#cookbook 'couchdb', :git => 'https://github.com/opscode-cookbooks/couchdb.git'
+cookbook 'couchdb', :git => 'https://github.com/sakumikko/couchdb.git'
+cookbook 'apt'
+cookbook 'nodejs'
+cookbook 'ssh_known_hosts'
+cookbook 'git'
+cookbook 'monit'
+cookbook 'package_installer'
+cookbook 'elasticsearch', :git => "https://github.com/elasticsearch/cookbook-elasticsearch.git"
+cookbook 'java'
+cookbook 'selenium', :git => "https://github.com/yandex-qatools/chef-selenium.git"
+# cookbook 'chef-client'
+
+# cookbook 'apache2', '>= 1.0.0'
+
+# cookbook 'rvm',
+#   :git => 'https://github.com/fnichol/chef-rvm'
+
+# cookbook 'postgresql',
+#   :git => 'https://github.com/findsyou/cookbooks',
+#   :ref => 'postgresql-improvements'

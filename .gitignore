@@ -1,0 +1,9 @@
+tmp
+.vagrant*
+*.lock
+*.log
+# Intellij
+.idea/
+*.iml
+*.iws
+# cookbooks/

@@ -1,0 +1,1 @@
+default['npm_packages']['packages'] = []
